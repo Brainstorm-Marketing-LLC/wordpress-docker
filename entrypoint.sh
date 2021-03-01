@@ -205,7 +205,9 @@ EOPHP
 		set_config 'DB_CHARSET' "$WORDPRESS_DB_CHARSET"
 		set_config 'DB_COLLATE' "$WORDPRESS_DB_COLLATE"
 
-        echo "Installing Wordpress..."
+        echo "Installing Wordpress plugins..."
+        wp plugin install astra
+
 
 		for unique in "${uniqueEnvs[@]}"; do
 			uniqVar="WORDPRESS_$unique"
