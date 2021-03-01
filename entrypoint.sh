@@ -206,6 +206,7 @@ EOPHP
 		set_config 'DB_COLLATE' "$WORDPRESS_DB_COLLATE"
 
         echo "Installing Wordpress plugins..."
+		echo wp core is_installed
 		wp plugin install elementor --allow-root
 		wp plugin install envato-elements --allow-root
 		wp theme install astra --activate --allow-root
