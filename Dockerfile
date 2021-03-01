@@ -9,7 +9,7 @@ RUN chmod +x /usr/local/bin/wp
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-COPY entrypoint.sh /usr/local/bin/
+RUN curl -o /usr/local/bin/entrypoint.sh https://raw.githubusercontent.com/Brainstorm-Marketing-LLC/wordpress-docker/master/entrypoint.sh
 
 ENTRYPOINT ["entrypoint.sh"]
 CMD ["apache2-foreground"]
