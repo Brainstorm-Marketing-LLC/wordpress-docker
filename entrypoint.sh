@@ -205,8 +205,6 @@ EOPHP
 		set_config 'DB_CHARSET' "$WORDPRESS_DB_CHARSET"
 		set_config 'DB_COLLATE' "$WORDPRESS_DB_COLLATE"
 
-        echo "Installing Wordpress plugins..."
-
 		for unique in "${uniqueEnvs[@]}"; do
 			uniqVar="WORDPRESS_$unique"
 			if [ -n "${!uniqVar}" ]; then
@@ -276,15 +274,17 @@ EOPHP
 	for e in "${envs[@]}"; do
 		unset "$e"
 	done
-fi
 
-echo $(wp core is_installed)
-wp plugin install elementor --allow-root --activate
-wp plugin install envato-elements --allow-root --activate
-wp theme install astra --activate --allow-root
-wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/astra-pro-addon-v3.0.0.zip --allow-root --activate
-wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/elementor-pro3.0.5.zip --allow-root --activate
-wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/updraftplus-2.16.47.25.zip --allow-root --activate
-wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/wordpress-seo-premium-15.6.zip --allow-root --activate
+	echo "Installing Wordpress plugins..."
+	echo $(wp core is_installed --allow-root)
+	wp plugin install elementor --allow-root --activate
+	wp plugin install envato-elements --allow-root --activate
+	wp theme install astra --activate --allow-root
+	wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/astra-pro-addon-v3.0.0.zip --allow-root --activate
+	wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/elementor-pro3.0.5.zip --allow-root --activate
+	wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/updraftplus-2.16.47.25.zip --allow-root --activate
+	wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/wordpress-seo-premium-15.6.zip --allow-root --activate
+
+fi
 
 exec "$@"
