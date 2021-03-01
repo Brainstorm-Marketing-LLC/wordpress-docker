@@ -206,7 +206,6 @@ EOPHP
 		set_config 'DB_COLLATE' "$WORDPRESS_DB_COLLATE"
 
         echo "Installing Wordpress..."
-        wp core install --url=example.com --title=Example --admin_user=supervisor --admin_password=strongpassword --admin_email=info@example.com --allow-root
 
 		for unique in "${uniqueEnvs[@]}"; do
 			uniqVar="WORDPRESS_$unique"
