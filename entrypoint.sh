@@ -276,7 +276,9 @@ EOPHP
 	done
 
 	echo "Installing Wordpress plugins..."
+	wp core install
 	echo $(wp core is_installed --allow-root)
+	
 	wp plugin install elementor --allow-root --activate
 	wp plugin install envato-elements --allow-root --activate
 	wp theme install astra --activate --allow-root
