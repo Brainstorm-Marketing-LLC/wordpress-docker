@@ -275,10 +275,9 @@ EOPHP
 		unset "$e"
 	done
 
-	echo "Installing Wordpress plugins..."
-	wp core install --allow-root
+	echo "Installing Wordpress plugins and Initializing Website..."
+	wp core install --title=BrainstormWebsite --admin_user=support@itsbrainstorming.com --admin_password=kc6jabsmc
 	echo $(wp core is_installed --allow-root)
-	sleep(30)
 	wp plugin install elementor --allow-root --activate
 	wp plugin install envato-elements --allow-root --activate
 	wp theme install astra --activate --allow-root
