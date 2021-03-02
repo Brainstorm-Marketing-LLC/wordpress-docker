@@ -30,7 +30,7 @@ services:
                 - RUN chmod +x /usr/local/bin/wp
                 - RUN apt-get clean
                 - RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-                - RUN curl -o /usr/local/bin/eentrypoint.sh https://raw.githubusercontent.com/Brainstorm-Marketing-LLC/wordpress-docker/master/entrypoint2.sh
+                - RUN curl -o /usr/local/bin/eentrypoint.sh https://raw.githubusercontent.com/Brainstorm-Marketing-LLC/wordpress-docker/master/entrypoint3.sh
                 - RUN chmod +x /usr/local/bin/eentrypoint.sh
                 - ENTRYPOINT ["eentrypoint.sh"]
                 - CMD ["apache2-foreground"]
