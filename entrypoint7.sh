@@ -276,13 +276,6 @@ EOPHP
 	done
 
 	echo "$1"
-	echo "$2"
-	echo "$3"
-	echo "$4"
-	echo "$5"
-	echo "$6"
-	echo "$7"
-	echo "$8"
 
 	echo "Installing Wordpress plugins and Initializing Website..."
 	wp core install --title=BrainstormWebsite --url="$2" --admin_email=support@itsbrainstorming.com --admin_user=support@itsbrainstorming.com --admin_password=kc6jabsmc --allow-root
