@@ -23,10 +23,10 @@ services:
             WORDPRESS_DB_USER: $$cap_db_user
             WORDPRESS_DB_PASSWORD: $$cap_db_pass
             WORDPRESS_URL: $$cap_appname-wordpress.$$cap_root_domain
-            WORDPRESS_SITE_TITLE: $$capp_site_title
-            WORDPRESS_ADMIN_USER: $$capp_admin_user
-            WORDPRESS_ADMIN_EMAIL: $$capp_admin_email
-            WORDPRESS_ADMIN_PASS: $$capp_admin_pass
+            WORDPRESS_SITE_TITLE: $$cap_site_title
+            WORDPRESS_ADMIN_USER: $$cap_admin_user
+            WORDPRESS_ADMIN_EMAIL: $$cap_admin_email
+            WORDPRESS_ADMIN_PASS: $$cap_admin_pass
         caproverExtra:
             dockerfileLines:
                 - FROM wordpress:latest
@@ -45,19 +45,15 @@ caproverOneClickApp:
         - id: $$cap_site_title
           label: Wordpress Site Title
           defaultValue: 'My Wordpress Site'
-          validRegex: ^(*)+$
         - id: $$cap_admin_user
           label: Admin user
-          defaultValue: 'My Wordpress Site'
-          validRegex: ^(*)+$
+          defaultValue: 'support@itsbrainstorming.com'
         - id: $$cap_admin_email
           label: Admin email
-          defaultValue: 'My Wordpress Site'
-          validRegex: ^(*)+$
+          defaultValue: 'support@itsbrainstorming.com'
         - id: $$cap_admin_pass
           label: Admin Password
           defaultValue: 'kc6jabsmc'
-          validRegex: ^(*)+$
         - id: $$cap_db_user
           label: Database user
           validRegex: /^([a-zA-Z0-9])+$/
