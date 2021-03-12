@@ -6,8 +6,9 @@ RUN chmod +x /usr/local/bin/wp
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 RUN curl -o /usr/local/bin/entrypoint.sh https://raw.githubusercontent.com/Brainstorm-Marketing-LLC/wordpress-docker/master/entrypoint7.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-ENTRYPOINT ["entrypoint.sh", "apache2-foreground", "test"]
+ENTRYPOINT ["entrypoint.sh", "apache2-foreground", "localhost:8080"]
 CMD ["apache2-foreground"]
