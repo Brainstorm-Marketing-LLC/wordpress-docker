@@ -276,7 +276,7 @@ EOPHP
 	done
 
 	echo "Installing Wordpress plugins and Initializing Website..."
-	wp core install --title=BrainstormWebsite --url="$WORDPRESS_URL" --admin_email=support@itsbrainstorming.com --admin_user=support@itsbrainstorming.com --admin_password=kc6jabsmc --allow-root
+	wp core install --title="$WORDPRESS_SITE_TITLE" --url="$WORDPRESS_URL" --admin_email="$WORDPRESS_ADMIN_EMAIL" --admin_user="$WORDPRESS_ADMIN_USER" --admin_password="$WORDPRESS_ADMIN_PASS" --allow-root
 	echo $(wp core is-installed --allow-root)
 	wp plugin install elementor --allow-root --activate
 	wp plugin install envato-elements --allow-root --activate
@@ -285,6 +285,8 @@ EOPHP
 	wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/elementor-pro3.0.5.zip --allow-root --activate
 	wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/updraftplus-2.16.47.25.zip --allow-root --activate
 	wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/wordpress-seo-premium-15.6.zip --allow-root --activate
+
+	export WORDPRESS_ADMIN_PASS=""
 
 fi
 
