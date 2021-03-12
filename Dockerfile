@@ -7,8 +7,8 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
-RUN curl -o /usr/local/bin/entrypoint.sh https://raw.githubusercontent.com/Brainstorm-Marketing-LLC/wordpress-docker/master/entrypoint7.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
+RUN curl -o /usr/local/bin/eeentrypoint.sh https://raw.githubusercontent.com/Brainstorm-Marketing-LLC/wordpress-docker/master/entrypoint8.sh
+RUN chmod +x /usr/local/bin/eeentrypoint.sh
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["eeentrypoint.sh"]
 CMD ["apache2-foreground"]

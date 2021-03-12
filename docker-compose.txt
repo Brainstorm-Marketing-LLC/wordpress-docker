@@ -22,6 +22,7 @@ services:
             WORDPRESS_DB_HOST: srv-captain--$$cap_appname-db:3306
             WORDPRESS_DB_USER: $$cap_db_user
             WORDPRESS_DB_PASSWORD: $$cap_db_pass
+            WORDPRESS_URL: $$cap_appname.$$cap_root_domain
         caproverExtra:
             dockerfileLines:
                 - FROM wordpress:latest
