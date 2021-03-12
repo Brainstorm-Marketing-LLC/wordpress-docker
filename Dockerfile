@@ -6,8 +6,8 @@ RUN chmod +x /usr/local/bin/wp
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN curl -o /usr/local/bin/eentrypoint.sh https://raw.githubusercontent.com/Brainstorm-Marketing-LLC/wordpress-docker/master/entrypoint.sh
-RUN chmod +x /usr/local/bin/eentrypoint.sh
+RUN curl -o /usr/local/bin/entrypoint.sh https://raw.githubusercontent.com/Brainstorm-Marketing-LLC/wordpress-docker/master/entrypoint7.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
-ENTRYPOINT ["eentrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh", "apache2-foreground", "test"]
 CMD ["apache2-foreground"]

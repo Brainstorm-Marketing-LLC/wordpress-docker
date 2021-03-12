@@ -47,7 +47,7 @@ caproverOneClickApp:
           validRegex: /^(\w|[^\s"'\\])+$/
         - id: $$cap_wp_version
           label: WordPress Version
-          defaultValue: 'latest'
+          defaultValue: '5.6.1'
           description: Check out their Docker page for the valid tags https://hub.docker.com/r/library/wordpress/tags/
           validRegex: /^([^\s^\/])+$/
         - id: $$cap_db_type
