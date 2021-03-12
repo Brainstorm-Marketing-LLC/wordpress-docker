@@ -11,5 +11,4 @@ RUN curl -o /usr/local/bin/entrypoint.sh https://raw.githubusercontent.com/Brain
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["entrypoint.sh"]
-#, "apache2-foreground", "localhost:8080"]
 CMD ["apache2-foreground"]
