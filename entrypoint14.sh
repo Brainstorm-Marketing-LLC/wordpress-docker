@@ -82,19 +82,6 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 		done
 		tar "${sourceTarArgs[@]}" . | tar "${targetTarArgs[@]}"
 		echo >&2 "Complete! WordPress has been successfully copied to $PWD"
-
-		echo "Installing Wordpress plugins and Initializing Website..."
-		wp core install --title="$WORDPRESS_SITE_TITLE" --url="$WORDPRESS_URL" --admin_email="$WORDPRESS_ADMIN_EMAIL" --admin_user="$WORDPRESS_ADMIN_USER" --admin_password="$WORDPRESS_ADMIN_PASS" --allow-root
-		echo $(wp core is-installed --allow-root)
-		wp plugin install elementor --allow-root --activate
-		wp plugin install envato-elements --allow-root --activate
-		wp theme install astra --activate --allow-root
-		wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/astra-pro-addon-v3.0.0.zip --allow-root --activate
-		wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/elementor-pro3.0.5.zip --allow-root --activate
-		wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/updraftplus-2.16.47.25.zip --allow-root --activate
-		wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/wordpress-seo-premium-15.6.zip --allow-root --activate
-		wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/all-in-one-wp-migration.zip --allow-root --activate
-		wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/all-in-one-wp-migration-unlimited-extension.zip --allow-root --activate
 	fi
 
 	# allow any of these "Authentication Unique Keys and Salts." to be specified via
@@ -175,6 +162,23 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
 }
 EOPHP
 			chown "$user:$group" wp-config.php
+
+			# Install Wordpress via CLI
+			echo "Installing Wordpress plugins and Initializing Website..."
+			wp core install --title="$WORDPRESS_SITE_TITLE" --url="$WORDPRESS_URL" --admin_email="$WORDPRESS_ADMIN_EMAIL" --admin_user="$WORDPRESS_ADMIN_USER" --admin_password="$WORDPRESS_ADMIN_PASS" --allow-root
+			echo $(wp core is-installed --allow-root)
+
+			# Install Plugins
+			wp plugin install elementor --allow-root --activate
+			wp plugin install envato-elements --allow-root --activate
+			wp theme install astra --activate --allow-root
+			wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/astra-pro-addon-v3.0.0.zip --allow-root --activate
+			wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/elementor-pro3.0.5.zip --allow-root --activate
+			wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/updraftplus-2.16.47.25.zip --allow-root --activate
+			wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/wordpress-seo-premium-15.6.zip --allow-root --activate
+			wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/all-in-one-wp-migration.zip --allow-root --activate
+			wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/all-in-one-wp-migration-unlimited-extension.zip --allow-root --activate
+
 		elif [ -e wp-config.php ] && [ -n "$WORDPRESS_CONFIG_EXTRA" ] && [[ "$(< wp-config.php)" != *"$WORDPRESS_CONFIG_EXTRA"* ]]; then
 			# (if the config file already contains the requested PHP code, don't print a warning)
 			echo >&2
