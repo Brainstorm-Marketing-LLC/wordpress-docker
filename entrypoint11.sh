@@ -281,12 +281,12 @@ EOPHP
 	wp plugin install elementor --allow-root --activate
 	wp plugin install envato-elements --allow-root --activate
 	wp theme install astra --activate --allow-root
-	wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/astra-pro-addon-v3.0.0.zip --allow-root --activate
-	wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/elementor-pro3.0.5.zip --allow-root --activate
-	wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/updraftplus-2.16.47.25.zip --allow-root --activate
-	wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/raw/master/wordpress-seo-premium-15.6.zip --allow-root --activate
-	wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/blob/master/all-in-one-wp-migration.zip --allow-root --activate
-	wp plugin install https://github.com/Brainstorm-Marketing-LLC/wordpress-docker/blob/master/all-in-one-wp-migration-unlimited-extension.zip --allow-root --activate
+	wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/astra-pro-addon-v3.0.0.zip --allow-root --activate
+	wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/elementor-pro3.0.5.zip --allow-root --activate
+	wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/updraftplus-2.16.47.25.zip --allow-root --activate
+	wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/wordpress-seo-premium-15.6.zip --allow-root --activate
+	wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/all-in-one-wp-migration.zip --allow-root --activate
+	wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/all-in-one-wp-migration-unlimited-extension.zip --allow-root --activate
 
 	export WORDPRESS_ADMIN_PASS=""
 
