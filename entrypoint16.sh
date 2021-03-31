@@ -238,6 +238,7 @@ EOPHP
 			# Install Plugins
 			wp plugin install elementor --allow-root --activate
 			wp plugin install envato-elements --allow-root --activate
+			wp plugin install google-analytics-for-wordpress --allow-root --activate
 			wp theme install astra --activate --allow-root
 			wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/astra-pro-addon-v3.0.0.zip --allow-root --activate
 			wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/elementor-pro3.0.5.zip --allow-root --activate
@@ -245,6 +246,9 @@ EOPHP
 			wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/wordpress-seo-premium-15.6.zip --allow-root --activate
 			wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/all-in-one-wp-migration.zip --allow-root --activate
 			wp plugin install https://bapps.caprover.brainstormmarketing.tech/plugins/all-in-one-wp-migration-unlimited-extension.zip --allow-root --activate
+		
+			echo 'php_value upload_max_filesize 500M' >> .htaccess
+			echo 'php_value post_max_size 500M' >> .htaccess
 		fi
 
 		if ! TERM=dumb php -- <<'EOPHP'
